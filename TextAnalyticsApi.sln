@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextAnalysis", "TextAnalysis\TextAnalysis.csproj", "{4BB44C7A-8D43-4ADF-900A-3DB5239018A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterMonitoring", "TwitterMonitoring\TwitterMonitoring.csproj", "{C03E924F-722C-47D4-8E40-F8ADA906F6D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterHelper", "TwitterHelper\TwitterHelper.csproj", "{225B1763-1D6A-4FB9-93AB-84CA9AD725C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{4BB44C7A-8D43-4ADF-900A-3DB5239018A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BB44C7A-8D43-4ADF-900A-3DB5239018A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4BB44C7A-8D43-4ADF-900A-3DB5239018A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C03E924F-722C-47D4-8E40-F8ADA906F6D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C03E924F-722C-47D4-8E40-F8ADA906F6D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C03E924F-722C-47D4-8E40-F8ADA906F6D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C03E924F-722C-47D4-8E40-F8ADA906F6D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{225B1763-1D6A-4FB9-93AB-84CA9AD725C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{225B1763-1D6A-4FB9-93AB-84CA9AD725C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{225B1763-1D6A-4FB9-93AB-84CA9AD725C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{225B1763-1D6A-4FB9-93AB-84CA9AD725C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
