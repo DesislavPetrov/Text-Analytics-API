@@ -1,0 +1,6 @@
+E:\GitHub\Text-Analytics-API\TwitterHelper\bin\Debug\TwitterHelper.dll
+E:\GitHub\Text-Analytics-API\TwitterHelper\bin\Debug\TwitterHelper.pdb
+E:\GitHub\Text-Analytics-API\TwitterHelper\obj\Debug\TwitterHelper.csprojResolveAssemblyReference.cache
+E:\GitHub\Text-Analytics-API\TwitterHelper\obj\Debug\TwitterHelper.csproj.CoreCompileInputs.cache
+E:\GitHub\Text-Analytics-API\TwitterHelper\obj\Debug\TwitterHelper.dll
+E:\GitHub\Text-Analytics-API\TwitterHelper\obj\Debug\TwitterHelper.pdb

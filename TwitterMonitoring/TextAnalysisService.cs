@@ -5,14 +5,12 @@ using Microsoft.ProjectOxford.Text.Sentiment;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TwitterMonitoring
 {
     public static class TextAnalysisService
     {
-        public static float AnalyzeSentiment (string id, string text, string language)
+        public static float AnalyzeSentiment(string id, string text, string language)
         {
             float score = 0;
             var document = new SentimentDocument()
@@ -36,28 +34,25 @@ namespace TwitterMonitoring
             }
             catch (Exception ex)
             {
-
                 var message = "";
                 var innerMessage = "";
                 if (!String.IsNullOrEmpty(ex.Message))
-                {
                     message = ex.Message;
-                }
 
                 try
                 {
-                    if ((ex.InnerException != null) & (!String.IsNullOrEmpty(innerMessage)))
-                    {
+                    if ((ex.InnerException != null) && (!String.IsNullOrEmpty(ex.InnerException.Message)))
                         innerMessage = ex.InnerException.Message;
-                    }
+
                 }
-                catch (Exception)
+                catch (Exception innerEx)
                 {
-
-                    throw;
+                    if ((innerEx.InnerException != null) && (!String.IsNullOrEmpty(innerEx.InnerException.Message)))
+                        innerMessage = innerEx.InnerException.Message;
                 }
-            }
 
+                Console.WriteLine(String.Format("Error in AnalyzeSentiment: {0}:{1}", message, innerMessage));
+            }
             return score;
         }
 
@@ -75,6 +70,7 @@ namespace TwitterMonitoring
             {
                 Url = "https://westeurope.api.cognitive.microsoft.com/text/analytics/v2.0/keyPhrases"
             };
+
             var request = new KeyPhraseRequest();
             request.Documents.Add(document);
 
@@ -89,28 +85,25 @@ namespace TwitterMonitoring
             }
             catch (Exception ex)
             {
-
                 var message = "";
                 var innerMessage = "";
                 if (!String.IsNullOrEmpty(ex.Message))
-                {
                     message = ex.Message;
-                }
 
                 try
                 {
-                    if ((ex.InnerException != null) & (!String.IsNullOrEmpty(innerMessage)))
-                    {
+                    if ((ex.InnerException != null) && (!String.IsNullOrEmpty(ex.InnerException.Message)))
                         innerMessage = ex.InnerException.Message;
-                    }
+
                 }
-                catch (Exception)
+                catch (Exception innerEx)
                 {
-
-                    throw;
+                    if ((innerEx.InnerException != null) && (!String.IsNullOrEmpty(innerEx.InnerException.Message)))
+                        innerMessage = innerEx.InnerException.Message;
                 }
-            }
 
+                Console.WriteLine(String.Format("Error in AnalyzeSentiment: {0}:{1}", message, innerMessage));
+            }
             return keyPhrases;
         }
 
@@ -133,33 +126,32 @@ namespace TwitterMonitoring
             try
             {
                 var response = client.GetLanguages(request);
-                var doc = response.Documents.First().DetectedLanguages.First();
+                language = response.Documents.First().DetectedLanguages.First();
             }
             catch (Exception ex)
             {
-
                 var message = "";
                 var innerMessage = "";
                 if (!String.IsNullOrEmpty(ex.Message))
-                {
                     message = ex.Message;
-                }
 
                 try
                 {
-                    if ((ex.InnerException != null) & (!String.IsNullOrEmpty(innerMessage)))
-                    {
+                    if ((ex.InnerException != null) && (!String.IsNullOrEmpty(ex.InnerException.Message)))
                         innerMessage = ex.InnerException.Message;
-                    }
+
                 }
-                catch (Exception)
+                catch (Exception innerEx)
                 {
-
-                    throw;
+                    if ((innerEx.InnerException != null) && (!String.IsNullOrEmpty(innerEx.InnerException.Message)))
+                        innerMessage = innerEx.InnerException.Message;
                 }
-            }
 
+                Console.WriteLine(String.Format("Error in AnalyzeSentiment: {0}:{1}", message, innerMessage));
+            }
             return language;
         }
     }
 }
+
+
