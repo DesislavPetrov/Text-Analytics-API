@@ -28,12 +28,12 @@ namespace TwitterMonitoring.Models
             this.Name = tweet.User != null ? tweet.User.Name : null;
             this.CreatedAt = ParseTwitterDateTime(tweet.CreatedAt);
             this.TimeZone = tweet.User != null ? (tweet.User.TimeZone != null ? tweet.User.TimeZone : "(unknown)") : "(unknown)";
-            this.Language = SentimentService.AnalyzeLanguage(this.Id.ToString(), this.Text);
+            this.Language = TextAnalysisService.AnalyzeLanguage(this.Id.ToString(), this.Text);
             this.LanguageName = String.Format("{0}({1})", this.Language.Name, this.Language.Iso639Name);
             this.LanguageConfidence = this.Language.Score * 100;
             this.RawJson = tweet.RawJson;
-            this.SentimentScore = SentimentService.AnalyzeSentiment(this.Id.ToString(), this.Text, this.Language.Iso639Name);
-            this.KeyPhrases = SentimentService.AnalyzeKeyPhrases(this.Id.ToString(), this.Text, this.Language.Iso639Name);
+            this.SentimentScore = TextAnalysisService.AnalyzeSentiment(this.Id.ToString(), this.Text, this.Language.Iso639Name);
+            this.KeyPhrases = TextAnalysisService.AnalyzeKeyPhrases(this.Id.ToString(), this.Text, this.Language.Iso639Name);
         }
 
         private DateTime ParseTwitterDateTime(string dateTime)
